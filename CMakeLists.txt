@@ -38,9 +38,6 @@ if(NOT EXISTS "${PROJECT_SOURCE_DIR}/external/assimp/CMakeLists.txt")
 endif()
 
 
-if(NOT EXISTS "${PROJECT_SOURCE_DIR}/external/glm/CMakeLists.txt")
-    message(FATAL_ERROR "The glm submodule was not downloaded! GIT_SUBMODULE was turned off or failed. Please update submodules and try again.")
-endif()
 
 file(
     GLOB imgui_src 
@@ -105,7 +102,6 @@ target_include_directories(
 	${PROJECT_NAME} 
 	PUBLIC external/glfw/include
     PUBLIC external/glad/include
-    PUBLIC external/glm
     PUBLIC external/imgui
     PUBLIC external/imgui/backends
     PUBLIC external/assimp/include
