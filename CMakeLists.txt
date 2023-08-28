@@ -48,6 +48,7 @@ file(
 
 file(GLOB src
     "src/core/*.cpp"
+    "src/math/*.cpp"
     "src/core/gizmos/*.cpp"
     "src/app/*.cpp"
 )
