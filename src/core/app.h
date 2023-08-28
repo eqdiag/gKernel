@@ -11,6 +11,10 @@ namespace core {
 
 		void setDimensions(int width, int height);
 
+		int getWidth() const;
+		int getHeight() const;
+
+
 	protected:
 		int mWindowWidth, mWindowHeight;
 

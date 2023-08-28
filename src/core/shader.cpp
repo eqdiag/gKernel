@@ -24,7 +24,7 @@ bool core::Shader::init(const char* shaderDirectory,const char* vertexShaderFile
     std::pair<bool,GLuint> pair = compileShader(shaderDirectory,vertexShaderFile, GL_VERTEX_SHADER);
 
     if (!pair.first) return false;
-    GLuint vertexShaderId = pair.first;
+    GLuint vertexShaderId = pair.second;
     pair = compileShader(shaderDirectory,fragmentShaderFile, GL_FRAGMENT_SHADER);
     if (!pair.first) return false;
     GLuint fragShaderId = pair.second;
@@ -137,6 +137,8 @@ std::pair<bool,GLuint> core::Shader::compileShader(const char * shaderDirectory,
 
     std::string fullFilePath(shaderDirectory);
     fullFilePath += shaderFile;
+
+    std::cout << "full path: " << fullFilePath << std::endl;
 
     std::ifstream file(fullFilePath);
     std::string shaderStr{""};

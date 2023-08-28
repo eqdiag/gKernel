@@ -170,4 +170,52 @@ void core::ArcCamera::recomputeFrame() {
     mRight = mForward.cross(mUp).normalize();
 }
 
+core::TopDownCamera::TopDownCamera(const math::Vec3& eye):
+    Camera{ 0.0,0.0,eye,math::Vec3{0,1,0},math::Vec3{0,0,-1},math::Vec3{1,0,0} }
+{
 
+}
+
+void core::TopDownCamera::translate(float x, float y, float z)
+{
+    mEye += math::Vec3(x, y, z);
+}
+
+void core::TopDownCamera::rotateTheta(float dtheta)
+{
+
+}
+
+void core::TopDownCamera::rotatePhi(float dphi)
+{
+
+}
+
+void core::TopDownCamera::zoom(float amt)
+{
+    mEye += math::Vec3(0,0,amt);
+}
+
+void core::TopDownCamera::setRadius(double radius)
+{
+}
+
+void core::TopDownCamera::reset(math::Vec3& center, double radius)
+{
+    mEye = center;
+}
+
+math::Mat4 core::TopDownCamera::getViewMatrix() const
+{
+    return math::Mat4::lookAt(mEye, mEye + mForward, mUp);
+}
+
+math::Vec3 core::TopDownCamera::getEye() const
+{
+    return mEye;
+}
+
+void core::TopDownCamera::recomputeFrame()
+{
+
+}
