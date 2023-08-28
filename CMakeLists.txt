@@ -1,4 +1,4 @@
-﻿# CMakeList.txt : CMake project for mesh_view, include source and define
+﻿# CMakeList.txt : CMake project for gKernel, include source and define
 # project specific logic here.
 #
 cmake_minimum_required (VERSION 3.25)
@@ -10,7 +10,7 @@ if (POLICY CMP0141)
   set(CMAKE_MSVC_DEBUG_INFORMATION_FORMAT "$<IF:$<AND:$<C_COMPILER_ID:MSVC>,$<CXX_COMPILER_ID:MSVC>>,$<$<CONFIG:Debug,RelWithDebInfo>:EditAndContinue>,$<$<CONFIG:Debug,RelWithDebInfo>:ProgramDatabase>>")
 endif()
 
-project ("mesh_view")
+project ("gKernel")
 
 ## get submodules from github
 find_package(Git QUIET)
@@ -122,7 +122,7 @@ target_link_libraries(
     assimp
 )
 
-set_property(TARGET mesh_view PROPERTY CXX_STANDARD 17)
+set_property(TARGET gKernel PROPERTY CXX_STANDARD 17)
 
 
 # TODO: Add tests and install targets if needed.
