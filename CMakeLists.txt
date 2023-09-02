@@ -59,11 +59,12 @@ set(ASSET_DIR
 )
 set(SHADER_DIR " \"${CMAKE_CURRENT_BINARY_DIR}/../../../assets/shaders/\" ")
 set(MODEL_DIR " \"${CMAKE_CURRENT_BINARY_DIR}/../../../assets/models/\" ")
+set(IMAGE_DIR " \"${CMAKE_CURRENT_BINARY_DIR}/../../../assets/images/\" ")
 
 message("Using Asset directory: ${ASSET_DIR}")
 message("Using Shader directory: ${SHADER_DIR}")
 message("Using Model directory: ${MODEL_DIR}")
-
+message("Using Image directory: ${IMAGE_DIR}")
 
 configure_file(
     "${CMAKE_CURRENT_LIST_DIR}/src/core/settings.h.in"
