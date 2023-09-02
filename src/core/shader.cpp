@@ -95,6 +95,16 @@ void core::Shader::enableVertexAttributeArray(const char* str)
     glEnableVertexAttribArray(getAttributeLocation(str));
 }
 
+void core::Shader::setUniformBool(const char* str, bool value)
+{
+    glUniform1i(getUniformLocation(str), value);
+}
+
+void core::Shader::setUniformInt(const char* str, int value)
+{
+    glUniform1i(getUniformLocation(str), value);
+}
+
 void core::Shader::setUniformFloat(const char* str,float value)
 {
     glUniform1f(getUniformLocation(str), value);
@@ -125,7 +135,7 @@ void core::Shader::setUniformFloat4(const char* str, const math::Vec4& v)
     glUniform4f(getUniformLocation(str), v[0], v[1], v[2], v[3]);
 }
 
-void core::Shader::setUniformMat4(const char* str, float* value)
+void core::Shader::setUniformMat4(const char* str, const float* value)
 {
     glUniformMatrix4fv(getUniformLocation(str), 1, GL_FALSE, value);
 }
@@ -137,8 +147,6 @@ std::pair<bool,GLuint> core::Shader::compileShader(const char * shaderDirectory,
 
     std::string fullFilePath(shaderDirectory);
     fullFilePath += shaderFile;
-
-    std::cout << "full path: " << fullFilePath << std::endl;
 
     std::ifstream file(fullFilePath);
     std::string shaderStr{""};

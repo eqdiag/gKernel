@@ -25,16 +25,15 @@ namespace core {
 		GLint getUniformLocation(const char* str);
 
 		void enableVertexAttributeArray(const char* str);
-
+		void setUniformBool(const char* str, bool value);
+		void setUniformInt(const char* str, int value);
 		void setUniformFloat(const char* str, float value);
 		void setUniformFloat2(const char* str, float valueX, float valueY);
 		void setUniformFloat3(const char* str, float valueX, float valueY, float valueZ);
 		void setUniformFloat3(const char* str,const math::Vec3& v);
 		void setUniformFloat4(const char* str, float valueX, float valueY, float valueZ,float valueW);
 		void setUniformFloat4(const char* str, const math::Vec4& v);
-
-
-		void setUniformMat4(const char* str, float* value);
+		void setUniformMat4(const char* str, const float* value);
 
 
 	private:

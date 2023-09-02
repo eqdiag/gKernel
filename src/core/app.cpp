@@ -1,5 +1,15 @@
 #include "app.h"
 
+core::App::App():
+	mWindowWidth{},
+	mWindowHeight{}
+{
+}
+
+core::App::~App()
+{
+}
+
 void core::App::init() {
 
 }
@@ -16,14 +26,4 @@ void core::App::setDimensions(int width, int height)
 {
 	mWindowWidth = width;
 	mWindowHeight = height;
-}
-
-int core::App::getWidth() const
-{
-	return mWindowWidth;
-}
-
-int core::App::getHeight() const
-{
-	return mWindowHeight;
 }

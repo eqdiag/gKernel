@@ -1,4 +1,7 @@
 #include <string>
+#include <assimp/scene.h>
+#include <assimp/Importer.hpp>
+#include <assimp/postprocess.h>
 #include <iostream>
 #include <cassert>
 #include <string>
@@ -10,7 +13,7 @@ core::AssetLoader::AssetLoader()
 {
 }
 
-/*std::unique_ptr<core::Mesh> core::AssetLoader::loadMesh(const char* modelDir, const char* modelFilename)
+std::unique_ptr<core::Mesh> core::AssetLoader::loadMesh(const char* modelDir, const char* modelFilename)
 {
     std::string modelPath{modelDir};
     modelPath += modelFilename;
@@ -70,5 +73,5 @@ std::unique_ptr<core::Mesh> core::AssetLoader::buildMesh(aiMesh * mesh){
  
 
     return std::make_unique<Mesh>( vertices, indices ,false);
-}*/
+}
 

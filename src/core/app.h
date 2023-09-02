@@ -5,18 +5,17 @@ namespace core {
 
 	class App {
 	public:
+		App();
+		virtual ~App();
 		virtual void init();
 		virtual void update();
 		virtual void render();
 
 		void setDimensions(int width, int height);
 
-		int getWidth() const;
-		int getHeight() const;
-
-
 	protected:
-		int mWindowWidth, mWindowHeight;
+		int mWindowWidth{};
+		int mWindowHeight{};
 
 	};
 

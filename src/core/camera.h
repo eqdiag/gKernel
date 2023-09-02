@@ -30,6 +30,10 @@ namespace core {
 
         virtual math::Mat4 getViewMatrix() const = 0;
         virtual math::Vec3 getEye() const = 0;
+        math::Vec3 getUp() const;
+        math::Vec3 getRight() const;
+        math::Vec3 getBack();
+
 
         virtual void recomputeFrame() = 0;
 
@@ -93,24 +97,6 @@ namespace core {
 
         math::Vec3 mCenter;
         float mRadius;
-    };
-
-    class TopDownCamera: public Camera {
-        public:
-            TopDownCamera(const math::Vec3& eye);
-
-            void translate(float x, float y, float z) override;
-            void rotateTheta(float dtheta) override;
-            void rotatePhi(float dphi) override;
-            void zoom(float amt) override;
-            void setRadius(double radius) override;
-            void reset(math::Vec3& center, double radius) override;
-
-            math::Mat4 getViewMatrix() const override;
-            math::Vec3 getEye() const override;
-
-            void recomputeFrame() override;
-
     };
 
 }
